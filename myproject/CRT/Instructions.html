@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Decision Task
+{% endblock %}
+
+{% block content %}
+
+    <div id="active_screen">
+
+        <p>You will now see three questions.</p>
+
+        <p>You will have {{ time_per_problem }} seconds for each problem.</p>
+
+        <p>At the end of the experiment,
+            one participant in this session will be randomly selected for payment. </p>
+
+        <p>If you are selected for payment, each correct answer earns you {{ payment_correct_per_item }}.</p>
+
+        <button class="btn btn-danger" id='button1' style="margin-left: 75%; display: block;"> OK </button>
+    </div>
+
+{% endblock %}
+
+

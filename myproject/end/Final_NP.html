@@ -1,0 +1,29 @@
+{% block content %}
+    <style>
+    h1 {text-align: center;}
+    p {text-align: justify;}
+
+    </style>
+
+    <h1>
+        Results
+    </h1>
+<br>
+
+
+
+
+<p>
+   You have been selected for payment in the last part of the experiment.  Remember that each correct answer  earns you an additional $1.
+ </p>
+<p>
+Your payment from this experiment is $7 + {{ participant.crtpayoff }} = {{ participant.payoff }}.
+</p>
+    <p>
+Please complete the payment sheet I will hand out. If you have any questions, please raise your hand.
+</p>
+
+
+
+{{ endblock }}
+

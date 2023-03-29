@@ -1,0 +1,35 @@
+{% block content %}
+    <style>
+    h1 {text-align: center;}
+    p {text-align: justify;}
+
+    </style>
+
+    <h1>
+        Results
+    </h1>
+<br>
+
+<p>
+    The computer has randomly selected one decision in situation <b>{{ session.chosen_situation }}</b>, the <b>{{ session.chosen_text }}</b> possible choice.
+    Your guess to the selected choice was <b>{{ participant.response }}</b>, and the most frequently given rating in previous sessions was <b>{{ session.modalresponse }}</b>.
+    Your payment for this part of the experiment is {{ participant.normpay }}.
+</p>
+{% if participant.picked == True %}
+<p>
+    You have been selected for payment in the last part of the experiment. Remember that each correct answer earns you an additional $1. Your payment for this part of the experiment is {{participant.crtpay}}.
+</p>
+{% elif participant.picked == False %}
+<p>
+    You have not been selected for payment in the last part of the experiment.
+    Your payment for this part of the experiment is {{participant.crtpay}}.
+</p>
+{% endif %}
+<p>
+Your total payment from this experiment is  {{ participant.payoff}}.
+</p>
+<p>
+Please complete the payment sheet I will hand out. If you have any questions, please raise your hand.
+</p>
+
+{% endblock %}

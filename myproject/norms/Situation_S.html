@@ -1,0 +1,134 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+  <style>
+    h1 {text-align: center;}
+    p {text-align: justify;}
+    div {text-align: center;}
+ </style>
+    {% if player.round_number == 1 %}
+    <h1>
+        Situation 1 Description (S)
+    </h1>
+
+      <br>
+    <p>
+        Suppose that Individual A is randomly paired with another person,
+        Individual B in an experiment. The pairing is anonymous, meaning that neither
+        individual will ever know the identity of the other individual with whom he or she is paired.
+    </p>
+    <p>
+        In the experiment, Individual A will make a choice, the experimenter will record this choice,
+        and then both individuals will be informed of the choice and paid money based on the choice
+        made by Individual A, as well as a small participation fee. Suppose that neither individual
+        will receive any other money for participating in the experiment.
+    </p>
+    <p>
+        In each pair, Individual A will receive $10. Individual A will then have the opportunity to
+        give any amount of his or her $10 to Individual B. For instance, Individual A may decide to
+        not give any money and keep all $10 for themselves. Or Individual A may decide to give all
+        $10 to Individual B. This choice will determine how much money each participant will receive,
+        privately and in cash, at the end of the experiment.
+    </p>
+  <p>
+        If you have a question about this situation, please raise your hand and wait for the experimenter.
+        </p>
+    {% elif player.round_number == 2 %}
+    <h1>
+        Situation 2 Description (S)
+    </h1>
+<br>
+     <p>
+        Suppose that Individual A is initially not paired with any other participant. During the experiment
+Individual A might be randomly paired with another person, Individual B. If the pairing occurs, then it
+will be anonymous, meaning that neither participant will ever know the identity of the other participant
+with whom he or she is paired.
+    </p>
+    <p>
+        In the experiment, Individual A will make a choice, the experimenter will record this choice, and
+Individual A will be paid money based on the choice, as well as a small participation fee. Another
+participant, Individual B, may or may not also be paid money based on the choice made by Individual
+A, as well as a small participation fee. Suppose that neither participant will receive any other money
+for participating in the experiment.
+    </p>
+    <p>
+        In each pair, Individual A will have a choice of whether to play a game or to pass on playing the game.
+    </p>
+        <p>
+            If Individual A decides to pass then he or she will receive $10, the two participants will not be paired,
+and Individual B will not find out anything about the game and will not receive any additional money.
+        </p>
+        <p>
+        If Individual A chooses to play the game, then he or she will be paired with Individual B. Individual A
+will receive $10 and will then have the opportunity to give any amount of his or her $10 to Individual
+B. That is, Individual A can give any of the $10 he or she receives to Individual B. For instance,
+Individual A may decide to give $0 to Individual B and keep $10 for him or herself. Or Individual A
+may decide to give $10 to Individual B and keep $0 for him or herself. Individual A may also choose
+to give any other amount between $0 and $10 to Individual B. In this case, Individual B will find out
+about the game and how much, if any, of the $10 Individual A chose to give and how much Individual
+A kept for him or herself.
+        </p>
+        <p>
+        If you have a question about this situation, please raise your hand and wait for the experimenter.
+        </p>
+    {% elif player.round_number == 3 %}
+    <h1>
+        Situation 3 Description (S)
+    </h1>
+<br>
+     <p>
+        Suppose that Individual A is randomly paired with another person, Individual B. The pairing is
+anonymous, meaning that neither individual will ever know the identity of the other individual with
+whom he or she is paired.
+    </p>
+    <p>
+        In the experiment, Individual A will make a choice, the experimenter will record this choice, and then
+both individuals will be informed of the choice and paid money based on the choice made by
+Individual A, as well as a small participation fee. Suppose that neither individual will receive any
+other money for participating in the experiment.
+    </p>
+    <p>
+        In each pair, Individual A will receive $5, in addition to the participation fee. Individual A will then
+have the opportunity to give any amount of his or her $5 to Individual B, which will be added to B's
+$5 participation fee to give B's final payout. That is, Individual A can give any of the $5, in $0.50
+increments, to Individual B. For instance, Individual A may decide to give $0 to Individual B and keep
+$5 for him or herself. Or Individual A may decide to give $5 to Individual B and keep $0 for him or
+herself. Individual A may also choose to give any other amount between $0 and $5 to Individual B, in
+$0.50 increments. This choice will determine how much money each will receive, privately and in
+cash, at the end of the experiment.
+    </p>
+  <p>
+        If you have a question about this situation, please raise your hand and wait for the experimenter.
+        </p>
+    {% elif player.round_number == 4 %}
+    <h1>
+        Situation 4 Description (S)
+    </h1>
+<br>
+     <p>
+        Suppose that Individual A is randomly paired with another person, Individual B. The pairing is
+anonymous, meaning that neither individual will ever know the identity of the other individual with
+whom he or she is paired.
+    </p>
+    <p>
+        In the experiment, Individual A will make a choice, the experimenter will record this choice, and then
+both individuals will be informed of the choice and paid money based on the choice made by
+Individual A, as well as a small participation fee. Suppose that neither individual will receive any
+other money for participating in the experiment.
+    </p>
+    <p>
+        In each pair, Individual A will receive $5, in addition to the participation fee. Individual A will then
+have the opportunity to give any of this $5, in $0.50 increments, to Individual B or to take $1 of
+Individual B's $5 participation fee. For instance, Individual A may decide to take $1 from Individual B
+and keep the $5 for him or herself. Or Individual A may decide to give any amount between $0 and
+$5, in $0.50 increments, to Individual B. This choice will determine how much money each will
+receive, privately and in cash, at the end of the experiment.
+    </p>
+  <p>
+        If you have a question about this situation, please raise your hand and wait for the experimenter.
+        </p>
+    {% endif %}
+{{ next_button }}
+{% endblock %}
+

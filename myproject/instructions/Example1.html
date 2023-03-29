@@ -1,0 +1,75 @@
+{% block content %}
+    <style>
+    h1 {text-align: center;}
+    p {text-align: justify;}
+    div {text-align: center;}
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+    </style>
+
+    <h1>
+        Example Decision
+    </h1>
+<br>
+    <p>
+        Individual A is at a local coffee shop near campus. While there, individual A notices that someone has
+left a wallet at one of the tables. Individual A must decide what to do. Individual A has four possible
+choices: take the wallet, ask others nearby if the wallet belongs to them, leave the wallet where it is, or
+give the wallet to the shop manager. Individual A can choose one of these four options.
+    </p>
+    <p>
+        <i>
+        The table below presents a list of the possible choices available to Individual A. For each of the
+choices, you will be asked to indicate whether you believe choosing that option is very socially
+inappropriate, somewhat socially inappropriate, somewhat socially appropriate, or very socially
+appropriate. To indicate your response, you would click the button in the corresponding box.
+        </i>
+        <br>
+        <br>
+    </p>
+    <table>
+        <tr>
+            <th>Individual A's choice</th>
+            <th>Very Socially Inappropriate</th>
+            <th>Somewhat Socially Inappropriate</th>
+            <th>Somewhat Socially Appropriate</th>
+            <th>Very Socially Appropriate</th>
+        </tr>
+    {{ for field in form }}
+        <tr>
+            <th>{{ field.label }}</th>
+            {{ for choice in field }}
+                <td>{{ choice }}</td>
+            {{ endfor }}
+        </tr>
+    {{ endfor }}
+    </table>
+    <p>
+        <br>
+        If this were one of the situations for this study, you would consider each of the possible choices above
+and, for that choice, indicate the extent to which you believe taking that action would be "socially
+appropriate" and "consistent with moral or proper social behavior" or "socially inappropriate" and
+"inconsistent with moral or proper social behavior". Recall that by socially appropriate we mean
+behavior that most people agree is the "correct" or "ethical" thing to do.
+    </p>
+    <div>
+
+        <b>Continue example on the next page</b>
+    </div>
+    {{ next_button }}
+
+{% endblock %}

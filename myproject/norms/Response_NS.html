@@ -1,0 +1,71 @@
+{{ block content }}
+  <style>
+    h1 {text-align: center;}
+    p {text-align: justify;}
+    div {text-align: center;}
+    table {
+        font-size: small;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+ </style>
+
+   <h1>
+        Your Decision
+    </h1>
+<br>
+
+
+    <p>
+        <i>
+       The table below gives a list of the possible choices available to Individual A.
+            For each of the choices, please indicate whether you believe choosing that option is very socially inappropriate, somewhat socially inappropriate, somewhat socially appropriate, or very socially appropriate.
+            To indicate your response, please click the button in the corresponding box.
+        </i>
+    </p>
+
+      <br>
+    <p>
+        <table class="table">
+            <tr>
+                <th>Individual A's choice</th>
+                <th>Very Socially Inappropriate</th>
+                <th>Somewhat Socially Inappropriate</th>
+                <th>Somewhat Socially Appropriate</th>
+                <th>Very Socially Appropriate</th>
+            </tr>
+            {% if not debug %}
+            {{ for s_list, f in page_temp }}
+                <tr>
+                    <th>{{ s_list }}</th>
+                    {{ for item in page_value }}
+                     <td><input class="form-check-input" type="radio" id="id_{{ f }}-{{ forloop.counter0 }}" name="{{ f }}" required value="{{ item }}"></td>
+                    {{ endfor }}
+                </tr>
+            {{ endfor }}
+            {% else %}
+            {{ for s_list, f in page_temp }}
+                <tr>
+                    <th>{{ s_list }}</th>
+                    {{ for item in page_value }}
+                     <td><input class="form-check-input" type="radio" id="id_{{ f }}-{{ forloop.counter0 }}" checked autocomplete="on" name="{{ f }}" required value="{{ item }}"></td>
+                    {{ endfor }}
+                </tr>
+            {{ endfor }}
+            {% endif %}
+        </table>
+    </p>
+
+    {{ next_button }}
+
+{{ endblock }}

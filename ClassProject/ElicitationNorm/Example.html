@@ -1,0 +1,54 @@
+ {% block content %}
+    <div class="center">
+
+    <h3>
+        Example Decision
+    </h3>
+
+    <p>
+        Individual A is at a local coffee shop near campus. While there, individual A notices that someone has
+        left a wallet at one of the tables. Individual A must decide what to do. Individual A has four possible
+choices: take the wallet, ask others nearby if the wallet belongs to them, leave the wallet where it is, or
+give the wallet to the shop manager. Individual A can choose one of these four options.
+    </p>
+    <p>
+        The table below presents a list of the possible choices available to Individual A. For each of the
+choices, you will be asked to indicate whether you believe choosing that option is very socially
+inappropriate, somewhat socially inappropriate, somewhat socially appropriate, or very socially
+appropriate. To indicate your response, you would place a check mark in the corresponding box
+    </p>
+    <p>
+        <table class="table">
+            <tr>
+                <th>Individual A's choice</th>
+                <th>Very Socially Inappropriate</th>
+                <th>Somewhat Socially Inappropriate</th>
+                <th>Somewhat Socially Appropriate</th>
+                <th>Very Socially Appropriate</th>
+            </tr>
+            {{ for field in form }}
+                <tr>
+                    <th>{{ field.label }}</th>
+                    {{ for choice in field }}
+                        <td>{{ choice }}</td>
+                    {{ endfor }}
+                </tr>
+            {{ endfor }}
+        </table>
+    </p>
+    <p>
+        Please make sure that you have placed one check mark in each row.
+    </p>
+    <p>
+        If this were one of the situations for this study, you would consider each of the possible choices above
+and, for that choice, indicate the extent to which you believe taking that action would be "socially
+appropriate" and "consistent with moral or proper social behavior" or "socially inappropriate" and
+"inconsistent with moral or proper social behavior". Recall that by socially appropriate we mean
+behavior that most people agree is the "correct" or "ethical" thing to do.
+    </p>
+    <p>
+        Continue example on the next page
+    </p>
+    {{ next_button }}
+
+{% endblock %}
